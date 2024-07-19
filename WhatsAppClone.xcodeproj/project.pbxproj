@@ -13,6 +13,8 @@
 		4B553D7F2C4AA2DB0000B86D /* SettingsTabScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B553D7E2C4AA2DB0000B86D /* SettingsTabScreen.swift */; };
 		4B553D812C4AA3950000B86D /* SettingsItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B553D802C4AA3950000B86D /* SettingsItemView.swift */; };
 		4B553D842C4AA43C0000B86D /* SettingsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B553D832C4AA43C0000B86D /* SettingsItem.swift */; };
+		4B553D882C4AE6550000B86D /* ChatRoomScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B553D872C4AE6550000B86D /* ChatRoomScreen.swift */; };
+		4B553D8A2C4AE8510000B86D /* TextInputArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B553D892C4AE8510000B86D /* TextInputArea.swift */; };
 		4B86659B2C483422001E9BE0 /* WhatsAppCloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B86659A2C483422001E9BE0 /* WhatsAppCloneApp.swift */; };
 		4B86659F2C483423001E9BE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B86659E2C483423001E9BE0 /* Assets.xcassets */; };
 		4B8665A22C483423001E9BE0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B8665A12C483423001E9BE0 /* Preview Assets.xcassets */; };
@@ -28,6 +30,8 @@
 		4B553D7E2C4AA2DB0000B86D /* SettingsTabScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTabScreen.swift; sourceTree = "<group>"; };
 		4B553D802C4AA3950000B86D /* SettingsItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsItemView.swift; sourceTree = "<group>"; };
 		4B553D832C4AA43C0000B86D /* SettingsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsItem.swift; sourceTree = "<group>"; };
+		4B553D872C4AE6550000B86D /* ChatRoomScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomScreen.swift; sourceTree = "<group>"; };
+		4B553D892C4AE8510000B86D /* TextInputArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputArea.swift; sourceTree = "<group>"; };
 		4B8665972C483422001E9BE0 /* WhatsAppClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatsAppClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B86659A2C483422001E9BE0 /* WhatsAppCloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsAppCloneApp.swift; sourceTree = "<group>"; };
 		4B86659E2C483423001E9BE0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -99,6 +103,23 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		4B553D852C4AE6400000B86D /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				4B553D862C4AE6470000B86D /* Views */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		4B553D862C4AE6470000B86D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4B553D872C4AE6550000B86D /* ChatRoomScreen.swift */,
+				4B553D892C4AE8510000B86D /* TextInputArea.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		4B86658E2C483422001E9BE0 = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +159,7 @@
 		4B8665B02C497789001E9BE0 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				4B553D852C4AE6400000B86D /* Chat */,
 				4B553D762C4978660000B86D /* Settings */,
 				4B553D742C4978540000B86D /* Channel */,
 				4B8665B52C4977ED001E9BE0 /* Communities */,
@@ -261,8 +283,10 @@
 				4B8665AF2C496A80001E9BE0 /* CallsTabScreen.swift in Sources */,
 				4B553D7F2C4AA2DB0000B86D /* SettingsTabScreen.swift in Sources */,
 				4B553D792C4978BC0000B86D /* CommunityTabScreen.swift in Sources */,
+				4B553D8A2C4AE8510000B86D /* TextInputArea.swift in Sources */,
 				4B553D7B2C497D6A0000B86D /* ChannelTabScreen.swift in Sources */,
 				4B86659B2C483422001E9BE0 /* WhatsAppCloneApp.swift in Sources */,
+				4B553D882C4AE6550000B86D /* ChatRoomScreen.swift in Sources */,
 				4B553D812C4AA3950000B86D /* SettingsItemView.swift in Sources */,
 				4B553D7D2C4982D10000B86D /* ChannelItemView.swift in Sources */,
 				4B8665A92C483A9A001E9BE0 /* MainTabView.swift in Sources */,
