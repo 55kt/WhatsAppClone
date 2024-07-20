@@ -10,10 +10,11 @@ import SwiftUI
 struct MessageItem: Identifiable {
     let id = UUID().uuidString
     let text: String
+    let type: MessageType
     let direction: MessageDirection
     
-    static let sentPlaceholder = MessageItem(text: "sent message sent message sent message", direction: .sent)
-    static let receivedPlaceholder = MessageItem(text: "received message received message received message", direction: .received)
+    static let sentPlaceholder = MessageItem(text: "sent message", type: .text, direction: .sent)
+    static let receivedPlaceholder = MessageItem(text: "received message", type: .text, direction: .received)
     
     var alignment: Alignment {
         return direction == .received ? .leading : .trailing
@@ -26,6 +27,16 @@ struct MessageItem: Identifiable {
     var backgroundColor: Color {
         return direction == .sent ? .bubbleGreen : .bubbleWhite
     }
+    
+    static let stubMessages: [MessageItem] = [
+        MessageItem(text: "Hi There", type: .text, direction: .sent),
+        MessageItem(text: "Check out this photo", type: .photo, direction: .received),
+        MessageItem(text: "Play out this video", type: .video, direction: .sent)
+    ]
+}
+
+enum MessageType {
+    case text, photo, video
 }
 
 enum MessageDirection {

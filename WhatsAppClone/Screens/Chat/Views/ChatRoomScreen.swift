@@ -15,6 +15,7 @@ struct ChatRoomScreen: View {
                 leadingNavItems()
                 trailingNavItems()
             }
+            .navigationBarTitleDisplayMode(.inline)
             .safeAreaInset(edge: .bottom) {
                 TextInputArea()
             }
