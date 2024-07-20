@@ -9,26 +9,15 @@ import SwiftUI
 
 struct ChatRoomScreen: View {
     var body: some View {
-        ScrollView {
-            LazyVStack {
-                ForEach(0..<12) { _ in
-                    Text("Placeholde")
-                        .font(.largeTitle)
-                        .bold()
-                        .frame(maxWidth: .infinity)
-                        .frame(height: 200)
-                        .background(Color.gray.opacity(0.1))
-                }
-            }
+        MessageListView()
             .toolbar(.hidden, for: .tabBar)
             .toolbar {
                 leadingNavItems()
                 trailingNavItems()
             }
-        }
-        .safeAreaInset(edge: .bottom) {
-            TextInputArea()
-        }
+            .safeAreaInset(edge: .bottom) {
+                TextInputArea()
+            }
     }
 }
 
