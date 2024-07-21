@@ -8,9 +8,14 @@
 import SwiftUI
 
 struct BubbleImageView: View {
+    
+    // MARK: - Properties
     let item: MessageItem
     
+    // MARK: - Body
     var body: some View {
+        
+        // Message position
         HStack {
             if item.direction == .sent { Spacer() }
             
@@ -31,15 +36,7 @@ struct BubbleImageView: View {
         }
     }
     
-    private func playButton() -> some View {
-        Image(systemName: "play.fill")
-            .padding()
-            .imageScale(.large)
-            .foregroundStyle(.gray)
-            .background(.thinMaterial)
-            .clipShape(Circle())
-    }
-    
+    // MARK: - Message apperance
     private func messageTextView() -> some View {
         VStack(alignment: .leading, spacing: 0) {
             Image(.stubImage0)
@@ -70,6 +67,18 @@ struct BubbleImageView: View {
         .applyTail(item.direction)
     }
     
+    // MARK: - Buttons
+    // Play Button function
+    private func playButton() -> some View {
+        Image(systemName: "play.fill")
+            .padding()
+            .imageScale(.large)
+            .foregroundStyle(.gray)
+            .background(.thinMaterial)
+            .clipShape(Circle())
+    }
+    
+    // Share Button
     private func shareButton() -> some View {
         Button {
             // Some action
@@ -83,6 +92,7 @@ struct BubbleImageView: View {
         }
     }
     
+    // TimeStamp Capsule function
     private func timeStampTextView() -> some View {
         HStack {
             Text("11:11 AM")
@@ -104,6 +114,7 @@ struct BubbleImageView: View {
     }
 }
 
+// MARK: - Preview
 #Preview {
     ScrollView {
         BubbleImageView(item: .receivedPlaceholder)

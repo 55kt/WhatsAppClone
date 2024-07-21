@@ -7,12 +7,16 @@
 
 import SwiftUI
 
+// MARK: - Bubble Tails
 struct BubbleTailView: View {
+    
     var direction: MessageDirection
+    
     private var backgroundColor: Color {
         return direction == .received ? .bubbleWhite : .bubbleGreen
     }
     
+    // Optionality
     var body: some View {
         Image(direction == .sent ? .outgoingTail : .incomingTail)
             .renderingMode(.template)
@@ -23,6 +27,7 @@ struct BubbleTailView: View {
     }
 }
 
+// MARK: - Preview
 #Preview {
     ScrollView {
         BubbleTailView(direction: .sent)

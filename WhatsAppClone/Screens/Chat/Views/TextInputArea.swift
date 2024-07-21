@@ -9,8 +9,10 @@ import SwiftUI
 
 struct TextInputArea: View {
     
+    // MARK: - Properties
     @State private var text = ""
     
+    // MARK: - Body
     var body: some View {
         HStack(alignment: .bottom, spacing: 5) {
             imagePickerButton()
@@ -25,6 +27,7 @@ struct TextInputArea: View {
         .background(.whatsAppWhite)
     }
     
+    // TextField Function
     private func messageTextField() -> some View {
         TextField("", text: $text, axis: .vertical)
             .padding(5)
@@ -35,11 +38,13 @@ struct TextInputArea: View {
             .overlay(textViewBorder())
     }
     
+    // Field Borders
     private func textViewBorder() -> some View {
         RoundedRectangle(cornerRadius: 20, style: .continuous)
             .stroke(Color(.systemGray5), lineWidth: 1)
     }
     
+    // MARK: - Buttons
     private func imagePickerButton() -> some View {
         Button {
             // Some action
@@ -77,6 +82,7 @@ struct TextInputArea: View {
     }
 }
 
+// MARK: - Preview
 #Preview {
     TextInputArea()
 }

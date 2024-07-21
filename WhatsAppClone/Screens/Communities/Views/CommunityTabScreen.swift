@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct CommunityTabScreen: View {
+    
+    // MARK: - Body
     var body: some View {
         NavigationStack {
             ScrollView {
@@ -23,7 +25,8 @@ struct CommunityTabScreen: View {
                     }
                     .padding(.horizontal, 5)
                     
-                    Button("See example communities") {  }
+                    // New Community Button
+                    Button("See example communities") {  } // some action
                         .frame(maxWidth: .infinity, alignment: .center)
                     
                     createNewCommunityButton()

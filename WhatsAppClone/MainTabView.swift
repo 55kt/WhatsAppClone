@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MainTabView: View {
     
+    // Initializer
     init() {
         makeTabBarOpaque()
         
@@ -16,6 +17,7 @@ struct MainTabView: View {
         UISlider.appearance().setThumbImage(thumbImage, for: .normal)
     }
     
+    // MARK: - Body
     var body: some View {
         TabView {
             UpdatesTabScreen()
@@ -72,6 +74,7 @@ extension MainTabView {
         }
     }
     
+    // MARK: - Tab Bar
     private enum Tab: String {
         case updates, calls, communities, chats, settings
         
@@ -96,6 +99,7 @@ extension MainTabView {
     }
 }
 
+// MARK: - Preview
 #Preview {
     MainTabView()
 }

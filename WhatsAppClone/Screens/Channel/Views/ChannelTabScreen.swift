@@ -12,6 +12,7 @@ struct ChannelTabScreen: View {
     // MARK: - Properties
     @State private var searchText = ""
     
+    // MARK: - Body
     var body: some View {
         NavigationStack {
             List {
@@ -30,6 +31,7 @@ struct ChannelTabScreen: View {
             .navigationTitle("Chats")
             .searchable(text: $searchText)
             .listStyle(.plain)
+            // Navbar content
             .toolbar {
                 leadingNavItems()
                 trailingNavItems()
@@ -41,6 +43,8 @@ struct ChannelTabScreen: View {
 extension ChannelTabScreen {
     @ToolbarContentBuilder
     private func leadingNavItems() -> some ToolbarContent {
+        
+        // Popup Button left side
         ToolbarItem(placement: .topBarLeading) {
             Menu {
                 Button {
@@ -54,6 +58,7 @@ extension ChannelTabScreen {
         }
     }
     
+    // Nav Bar Items
     @ToolbarContentBuilder
     private func trailingNavItems() -> some ToolbarContent {
         ToolbarItemGroup(placement: .topBarTrailing) {
@@ -63,6 +68,7 @@ extension ChannelTabScreen {
         }
     }
     
+    // MARK: - Buttons
     private func aiButton() -> some View {
         Button {
             // Some action
@@ -98,6 +104,7 @@ extension ChannelTabScreen {
         }
     }
     
+    // End footer function
     private func inboxFooterView() -> some View {
         HStack {
             Image(systemName: "lock.fill")

@@ -28,6 +28,7 @@ struct MessageItem: Identifiable {
         return direction == .sent ? .bubbleGreen : .bubbleWhite
     }
     
+    // Stub Messages for examination
     static let stubMessages: [MessageItem] = [
         MessageItem(text: "Hi There", type: .text, direction: .sent),
         MessageItem(text: "Check out this photo", type: .photo, direction: .received),

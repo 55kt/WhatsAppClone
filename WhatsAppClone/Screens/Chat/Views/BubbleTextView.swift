@@ -9,9 +9,13 @@ import SwiftUI
 
 struct BubbleTextView: View {
     
+    // MARK: - Properties
     let item: MessageItem
     
+    // MARK: - Body
     var body: some View {
+        
+        // Text Message
         VStack(alignment: item.horizontalAlignment, spacing: 3) {
             Text("Hello, World! How are you doing")
                 .padding(10)
@@ -27,6 +31,7 @@ struct BubbleTextView: View {
         .padding(.trailing, item.direction == .received ? 100 : 5)
     }
     
+    // TimeStamp function
     private func timeStampTextView() -> some View {
         HStack {
             Text("3:05 PM")
@@ -44,6 +49,7 @@ struct BubbleTextView: View {
     }
 }
 
+// MARK: - Preview
 #Preview {
     ScrollView {
         BubbleTextView(item: .sentPlaceholder)

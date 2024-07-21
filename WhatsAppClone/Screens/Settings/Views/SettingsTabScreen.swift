@@ -12,8 +12,11 @@ struct SettingsTabScreen: View {
     // MARK: - Properties
     @State private var searchText = ""
     
+    // MARK: - Body
     var body: some View {
         NavigationStack {
+            
+            // List of Settings
             List {
                 
                 SettingsHeaderView()
@@ -78,6 +81,7 @@ private struct SettingsHeaderView: View {
     }
 }
 
+// MARK: - Preview
 #Preview {
     SettingsTabScreen()
 }

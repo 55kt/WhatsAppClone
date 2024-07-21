@@ -13,6 +13,7 @@ struct CallsTabScreen: View {
     @State private var searcText = ""
     @State private var callHistory = CallHistory.all
     
+    // MARK: - Body
     var body: some View {
         NavigationStack {
             List {
@@ -44,6 +45,8 @@ struct CallsTabScreen: View {
 }
 
 extension CallsTabScreen {
+    
+    // Phone Button
     @ToolbarContentBuilder
     private func trailingNavItem() -> some ToolbarContent {
         ToolbarItem(placement: .topBarTrailing) {
@@ -55,6 +58,7 @@ extension CallsTabScreen {
         }
     }
     
+    // Edit Button
     @ToolbarContentBuilder
     private func leadingNavItem() -> some ToolbarContent {
         ToolbarItem(placement: .topBarLeading) {
@@ -76,6 +80,7 @@ extension CallsTabScreen {
         }
     }
     
+    // Call History
     private enum CallHistory: String, CaseIterable, Identifiable {
         case all, missed
         
@@ -85,6 +90,7 @@ extension CallsTabScreen {
     }
 }
 
+// Call link Area
 private struct CreateCallLinkSection: View {
     var body: some View {
         HStack {
@@ -106,6 +112,7 @@ private struct CreateCallLinkSection: View {
     }
 }
 
+// Date of call
 private struct RecentCallItemView: View {
     var body: some View {
         HStack {
@@ -124,6 +131,7 @@ private struct RecentCallItemView: View {
         }
     }
     
+    // Caller
     private func recentCallsTextView() -> some View {
         VStack(alignment: .leading) {
             Text("John Smith")
@@ -138,6 +146,7 @@ private struct RecentCallItemView: View {
     }
 }
 
+// MARK: - Preview
 #Preview {
     CallsTabScreen()
 }

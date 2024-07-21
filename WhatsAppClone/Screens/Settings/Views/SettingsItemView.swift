@@ -9,8 +9,10 @@ import SwiftUI
 
 struct SettingsItemView: View {
     
+    // MARK: - Properties
     let item: SettingsItem
     
+    // MARK: - Body
     var body: some View {
         HStack {
             iconImageView()
@@ -42,6 +44,7 @@ struct SettingsItemView: View {
     }
 }
 
+// MARK: - Preview
 #Preview {
     SettingsItemView(item: .broadCastLists)
 }

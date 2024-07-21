@@ -9,11 +9,14 @@ import SwiftUI
 
 struct BubbleAudioView: View {
     
+    // MARK: - Properties
     let item: MessageItem
     @State private var sliderValue: Double = 0
     @State private var sliderRange: ClosedRange<Double> = 0...20
     
+    // MARK: - Body
     var body: some View {
+        // Message apperance & position
         VStack(alignment: item.horizontalAlignment, spacing: 3) {
             HStack {
                 playButton()
@@ -40,6 +43,7 @@ struct BubbleAudioView: View {
         .padding(.trailing, item.direction == .received ? 45 : 5)
     }
     
+    // TimeStamp Function
     private func timeStampTextView() -> some View {
         HStack {
             Text("3:05 PM")
@@ -56,6 +60,7 @@ struct BubbleAudioView: View {
         }
     }
     
+    // Play button function
     private func playButton() -> some View {
         Button {
             // Some action

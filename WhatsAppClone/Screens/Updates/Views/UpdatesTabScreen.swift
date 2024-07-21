@@ -12,7 +12,10 @@ struct UpdatesTabScreen: View {
     // MARK: - Properties
     @State private var searchText = ""
     
+    // MARK: - Body
     var body: some View {
+        
+        // General List View
         NavigationStack {
             List {
                 StatusSectionHeader()
@@ -40,34 +43,18 @@ struct UpdatesTabScreen: View {
         }
     }
     
-    private func channelSectionHeader() -> some View {
-        HStack {
-            Text("Channels")
-                .bold()
-                .font(.title3)
-                .textCase(nil)
-                .foregroundStyle(.whatsAppBlack)
-            Spacer()
-            
-            Button {
-                // Some action
-            } label: {
-                Image(systemName: "plus")
-                    .padding(7)
-                    .background(Color(.systemGray5))
-                    .clipShape(Circle())
-            }
-        }
-    }
+    
     
 }
 
+// Image Sizer
 extension UpdatesTabScreen {
     enum Constant {
         static let imageDimen: CGFloat = 55
     }
 }
 
+// MARK: - Status Privacy
 private struct StatusSectionHeader: View {
     var body: some View {
         HStack(alignment: .top) {
@@ -93,6 +80,8 @@ private struct StatusSectionHeader: View {
 }
 
 private struct StatusSection: View {
+    
+    // MARK: - Body
     var body: some View {
         HStack {
             Circle()
@@ -101,6 +90,7 @@ private struct StatusSection: View {
                     height: UpdatesTabScreen.Constant.imageDimen
                 )
             
+            // My Status Area
             VStack(alignment: .leading) {
                 Text("My Status")
                     .font(.callout)
@@ -144,6 +134,7 @@ private struct StatusSection: View {
     }
 }
 
+// MARK: - Recent
 private struct RecentUpdatesItemView: View {
     var body: some View {
         HStack {
@@ -161,6 +152,27 @@ private struct RecentUpdatesItemView: View {
                     .foregroundStyle(.gray)
                     .font(.system(size: 15))
             }
+        }
+    }
+}
+
+// MARK: - Channels
+private func channelSectionHeader() -> some View {
+    HStack {
+        Text("Channels")
+            .bold()
+            .font(.title3)
+            .textCase(nil)
+            .foregroundStyle(.whatsAppBlack)
+        Spacer()
+        
+        Button {
+            // Some action
+        } label: {
+            Image(systemName: "plus")
+                .padding(7)
+                .background(Color(.systemGray5))
+                .clipShape(Circle())
         }
     }
 }

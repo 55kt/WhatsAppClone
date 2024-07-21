@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ChannelItemView: View {
+    
+    // MARK: - Body
     var body: some View {
         HStack(alignment: .top, spacing: 10) {
             Circle()
@@ -42,6 +44,7 @@ struct ChannelItemView: View {
     }
 }
 
+// MARK: - Preview
 #Preview {
     ChannelItemView()
 }

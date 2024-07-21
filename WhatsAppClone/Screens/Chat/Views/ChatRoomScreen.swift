@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ChatRoomScreen: View {
+    
+    // MARK: - Body
     var body: some View {
         MessageListView()
             .toolbar(.hidden, for: .tabBar)
@@ -28,7 +30,7 @@ extension ChatRoomScreen {
     private func leadingNavItems() -> some ToolbarContent {
         ToolbarItem(placement: .topBarLeading) {
             HStack {
-                Circle()
+                Circle()  // User Avatar
                     .frame(width: 35, height: 35)
                 
                 Text("Username Here")
@@ -40,12 +42,15 @@ extension ChatRoomScreen {
     @ToolbarContentBuilder
     private func trailingNavItems() -> some ToolbarContent {
         ToolbarItemGroup(placement: .topBarTrailing) {
+            
+            // Video Button
             Button {
                 // Some action
             } label: {
                 Image(systemName: "video")
             }
             
+            // Phone Button
             Button {
                 // Some action
             } label: {
@@ -57,6 +62,7 @@ extension ChatRoomScreen {
     
 }
 
+// MARK: - Preview
 #Preview {
     NavigationStack {
         ChatRoomScreen()
