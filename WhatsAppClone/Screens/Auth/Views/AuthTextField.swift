@@ -12,6 +12,7 @@ struct AuthTextField: View {
     let type: InputType
     @Binding var text: String
     @State private var isSecure: Bool = true
+    var autocapitalization: TextInputAutocapitalization = .sentences
     
     // MARK: - Body
     var body: some View {
@@ -23,8 +24,11 @@ struct AuthTextField: View {
             switch type {
             case .password:
                 SecureField(type.placeholder, text: $text)
+                    .textInputAutocapitalization(autocapitalization)
+                    
             default:
                 TextField(type.placeholder, text: $text)
+                    .textInputAutocapitalization(autocapitalization)
                     .keyboardType(type.keyboardType)
             }
         }
