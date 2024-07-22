@@ -8,20 +8,25 @@
 import SwiftUI
 
 struct LoginScreen: View {
+    // MARK: - Properties
+    @StateObject private var authScreenModel = AuthScreenModel()
+    
+    // MARK: - Body
     var body: some View {
         NavigationStack {
             VStack {
                 Spacer()
                 AuthHeaderView()
                 
-                AuthTextField(type: .email, text: .constant(""))
-                AuthTextField(type: .password, text: .constant(""))
+                AuthTextField(type: .email, text: $authScreenModel.email)
+                AuthTextField(type: .password, text: $authScreenModel.password)
                 
                 forgotPasswordButton()
                 
                 AuthButton(title: "Login") {
                     //
                 }
+                .disabled(authScreenModel.disableLoginButton)
                 
                 Spacer()
                 
@@ -49,7 +54,7 @@ struct LoginScreen: View {
     
     private func signUpButton() -> some View {
         NavigationLink {
-            Text("SIGN UP View Placeholder")
+            SignUpScreen(authScreenModel: authScreenModel)
         } label: {
             HStack {
                 Image(systemName: "sparkles")
@@ -67,6 +72,7 @@ struct LoginScreen: View {
     }
 }
 
+// MARK: - Preview
 #Preview {
     LoginScreen()
 }
