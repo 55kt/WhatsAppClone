@@ -9,8 +9,11 @@ import SwiftUI
 
 struct MainTabView: View {
     
+    private let currentUser: UserItem
+    
     // Initializer
-    init() {
+    init(_ currentUser: UserItem) {
+        self.currentUser = currentUser
         makeTabBarOpaque()
         
         let thumbImage = UIImage(systemName: "circle.fill")
@@ -101,5 +104,5 @@ extension MainTabView {
 
 // MARK: - Preview
 #Preview {
-    MainTabView()
+    MainTabView(.placeholder)
 }

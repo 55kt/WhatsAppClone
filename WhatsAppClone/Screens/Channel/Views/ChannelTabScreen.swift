@@ -11,6 +11,7 @@ struct ChannelTabScreen: View {
     
     // MARK: - Properties
     @State private var searchText = ""
+    @State private var showChatPartnerPickerView = false
     
     // MARK: - Body
     var body: some View {
@@ -35,6 +36,9 @@ struct ChannelTabScreen: View {
             .toolbar {
                 leadingNavItems()
                 trailingNavItems()
+            }
+            .sheet(isPresented: $showChatPartnerPickerView) {
+                ChatPartnerPickerScreen()
             }
         }
     }
@@ -79,7 +83,7 @@ extension ChannelTabScreen {
     
     private func newChatButton() -> some View {
         Button {
-            // Some action
+            showChatPartnerPickerView = true
         } label: {
             Image(.plus)
         }
